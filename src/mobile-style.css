@@ -1,0 +1,243 @@
+@font-face {
+    font-family: tianicon;
+    src: url('assets/tianicon.ttf') format('TrueType');
+}
+
+html {
+    height: min-content;
+    width : 100vw;
+}
+
+body {
+    position: relative;
+    height : min-content; 
+    margin : 0;
+    padding : 0;
+    overflow-x: hidden;
+}
+
+.f-exo {
+    font-family: exo;
+}
+
+.f-sand {
+    font-family: Quicksand;
+}
+
+.f-rale {
+    font-family: Raleway;
+}
+
+.page-container {
+    height: inherit;
+    width: 100vw;
+    background : white;
+    z-index: 1;
+}
+
+.headbar {
+    position : absolute;
+    top : 0;
+    height: 100%;
+    width : 100vw;
+    /*pointer-events: none;*/
+    z-index : 999;
+}
+
+.head {
+    display : flex;
+    align-items: center;
+    height: 60px;
+    width: 100vw;
+    background : #d9e149;
+}
+
+.toyota {
+    color : white;
+    font-size : 50px;
+    margin-left : 25px;
+}
+
+.lets-go-beyond {
+    margin-left : 10px;
+    border-left : 2px solid white;
+    color : white;
+}
+
+.lets-go-beyond p {
+    font-family: Arial;
+    font-weight : 600;
+    letter-spacing: 1px;
+    font-style: italic;
+    padding-left : 10px;
+    font-size : 10px;
+    margin : 0;
+}
+
+.nav-container {
+    display : flex;
+    justify-content: space-around;
+    align-items: center;
+    height : 55px;
+    width : 100vw;
+    background : white;
+    position: sticky;
+    top : 0px;
+}
+
+.nav-container span {
+    font-size : 20px;
+    color : #B6BD3B;
+}
+
+.icon {
+    font-family: tianicon;
+}
+
+.page {
+}
+
+.p1 {
+    display : grid;
+    height: 100vh;
+    width : 100vw;
+    grid-template-columns   : 40px 1fr 40px;
+    grid-template-rows      : 40% 100px 1fr 10%;
+    grid-template-areas     :   ' . . . '
+                                ' . T . '
+                                ' . . . '
+                                ' . x . ';
+}
+
+.home-carousel {
+    width: min-content;
+    height : 100vh;
+}
+
+.current-slide {
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size : auto 100vh;
+    transition : all 800ms;
+}
+
+.c00 {
+    background-image : url("assets/img/view-00.jpg");
+}
+.c01 {
+    background-image : url("assets/img/view-01.jpg");
+}
+.c02 {
+    background-image : url("assets/img/view-02.jpg");
+}
+.c03 {
+    background-image : url("assets/img/view-03.jpg");
+}
+.c04 {
+    background-image : url("assets/img/view-04.jpg");
+}
+
+.carousel-pointer {
+    display : flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    grid-area : x;
+    height : min-content;
+    z-index : 998;
+}
+
+.carousel-pointer span {
+    border-radius : 50%;
+    width : 10px;
+    height : 10px;
+    background : white;
+}
+
+.carousel-title {
+    grid-area : T;
+}
+
+.p2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    flex-direction: row;
+    height: 50vh;
+    width : 100vw;
+}
+
+.hot-offer {
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color : #6C7A89;
+}
+
+.ho-desc {
+    font-size: 13px;
+    width: 250px;
+    text-align: center;
+}
+
+.ho-button {
+    width: 200px;
+    height : 50px;
+    text-align : center;
+    line-height: 50px;
+    margin : 10px;
+    border : solid #34515E 2px;
+    letter-spacing: 2px;
+}
+
+.p3 {
+    height : 100vh;
+    width: 100vw;
+}
+
+.nav-left {
+    height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 1000; 
+    top: 0;
+    left: 0;
+    background-color: #fff; 
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.nav-left a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    margin-top: 6px;
+}
+
+.nav-left a:hover, .nav-left .active {
+    background-color: #F3F3F3;
+    color: #d9e149;
+}
+
+.nav-left .icon {
+    font-size: 1.5em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+}
+
+.nav-left .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #818181;
+}
