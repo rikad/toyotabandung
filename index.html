@@ -4,68 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='stylesheet' href='src/mobile.css'>
+    <link rel='stylesheet' href='src/mobile-style.css'>
     <title>Document</title>
 </head>
 <body>
-
     <div class='headbar'>
-        <div class='logo-container'>
-            <span class='logo-toyota font-icon'>T</span>
-            <span class='logo-text'>
-                <font color='white'>
-                    LET'S
-                    GO
-                </font>
-                <font color='white'>BEYOND</font>
+        <div class='head'>
+            <span class='icon toyota'>T</span>
+            <span class='lets-go-beyond'>
+                <p>LET'S</p>
+                <p>GO</p>
+                <p>BEYOND</p>
             </span>
         </div>
+        <nav class='nav-container'>
+            <span class='icon humberger'>1</span>
+            <span class='icon gallery'>5</span>
+            <span class='icon price'>T</span>
+            <span class='icon consult'>3</span>
+        </nav>
     </div>
+    <div class="nav-left">
+      <div class="closebtn" onclick="closeNavLeft()">&times;</div>
+      <a class='active' href="#"><span class='icon'>3</span> Home</a>
+      <a href="#"><span class='icon'>4</span> Gallery</a>
+      <a href="#"><span class='icon'>6</span> Brochure</a>
+      <a href="#"><span class='icon'>5</span> Contact</a>
+    </div>
+    <div class="description-push">
+      <div class="closebtn" onclick="closeDescPush()">&times;</div>
+      <hr>
 
-    <nav class='head-nav'>
-        <span class='font-icon home'>5</span>
-        <span class='font-icon galery'>4</span>
-        <span class='font-icon brochure'>B</span>
-        <span class='font-icon location'>1</span>
-    </nav>
+        <div class='description-push-product'>
+            <div class='frame yaris-frame'>
+                <span class='prize'>235 JT</span>
+                <span class='icon i-frame buy yaris-buy'>L</span>
+                <span class='icon i-frame wish yaris-wish'>C</span>
+            </div>
+            <h5 class='f-sand frame-desc'>NEW YARIS 2018</h5>
+            <p class='f-rale frame-class'>HATCHBACK</p>
 
-    <div class='page-container'>
-        <div class='page p1'>
-            <span class='p1-container'>
-                <p>
-                    New Yaris
-                </p>
-                <p class='harga'>
-                    235 Jt
-                </p>
-            </span>
-            
-            <span class='font-icon cart-border'>
-                    <span class='cart-icon'>C</span>
-            </span>
-        </div>
-
-        <div class='page p2'>  
-            <div class='interior-image'>
-                asd
+            <div class='description-push-contact'>
+                <span class='icon whatsapp'>W</span>
+                <a href="https://api.whatsapp.com/send?phone=6285722206662&text=I%27m%20interested%20in%20your%20car%20for%20sale#"><span class='f-exo phone-num'>Contact WhatsApp</span></a>
             </div>
         </div>
-        <div class='page p3'>
-            <div class='choose-color-text'>
-                    <span>Chose Your Color</span>
+
+    </div>
+
+    <div class='page-container'>
+        <div class='p1 page'>
+            <div class='home-carousel'>
+                <div class='current-slide c00'></div>
+            </div>
+            <div class='carousel-title'>
+                <p>ASDASDASD</p>
+            </div>
+            <div class='carousel-pointer'>
+                <span class='caro00 current' onclick='imageCarousel("c00")'></span>
+                <span class='caro01' onclick='imageCarousel("c01")'></span>
+                <span class='caro02' onclick='imageCarousel("c02")'></span>
+                <span class='caro03' onclick='imageCarousel("c03")'></span>
+                <span class='caro04' onclick='imageCarousel("c04")'></span>
+            </div>
+        </div>
+        <div class='p2 page'>
+            <div class='hot-offer'>
+                <h2 class='f-exo'>MONTHLY HOT OFFER</h2>
+                <p class='f-sand ho-desc'>Dapatkan informasi mengenai penawaran mobil dengan harga terbaik bulan ini</p>
+                <div class='ho-button f-rale'>KNOW MORE</div>
+            </div>
+        </div>
+        <div class='p3 page'>
+            <div class='card-container'>
+                <p class='f-exo'>LIVE CHAT DENGAN KAMI</p>
+                <div class='andrian-image'></div>
+                <div class='andrian-id'>
+                    <p class='f-exo position'>TOYOTA EXECUTIVE SALES CONSULTANT</p>
+                    <p class='f-rale nama-adrian'>KANG ANDRIAN<br></p>
                 </div>
-                <div class='car-carousel'>
-                    
+                <div class='add-contact'>
+                    <span class='icon whatsapp'>W</span>
+                    <span class='f-exo phone-num'>Add WhatsApp</span>
                 </div>
-                <div class='color-container'>
-                        <span class='color c1 color-active' onclick="changeColor(this,'c1')"></span>
-                        <span class='color c2' onclick="changeColor(this,'c2')"></span>
-                        <span class='color c3' onclick="changeColor(this,'c3')"></span>
-                        <span class='color c4' onclick="changeColor(this,'c4')"></span>
-                        <span class='color c5' onclick="changeColor(this,'c5')"></span>
-                        <span class='color c6' onclick="changeColor(this,'c6')"></span>
-                        <span class='color c7' onclick="changeColor(this,'c7')"></span>
+            </div>
+        </div>
+        <div class='p4 page'>
+            <div class='container-p4'>
+                <h2 class='featured-product f-exo'>FEATURED PRODUCT</h2>
+                <div class='product product-yaris'>
+                    <div class='frame yaris-frame'>
+                        <span class='prize'>235 JT</span>
+                        <span class='icon i-frame buy yaris-buy'>L</span>
+                        <span class='icon i-frame wish yaris-wish'>C</span>
+                    </div>
+                    <h5 class='f-sand frame-desc'>NEW YARIS 2018</h5>
+                    <p class='f-rale frame-class'>HATCHBACK</p>
                 </div>
+                <div class='product product-rush'>
+                    <div class='frame rush-frame'>
+                        <span class='prize'>240 JT</span>
+                        <span class='icon i-frame buy rush-buy'>L</span>
+                        <span class='icon i-frame wish rush-wish'>C</span>
+                    </div>
+                    <h5 class='f-sand frame-desc'>ALL NEW RUSH</h5>
+                    <p class='f-rale frame-class'>SUV</p>
+                </div>
+                <div class='product product-avanza'>
+                    <div class='frame avanza-frame'>
+                        <span class='prize'>190 JT</span>
+                        <span class='icon i-frame buy avanza-buy'>L</span>
+                        <span class='icon i-frame wish avanza-wish'>C</span>
+                    </div>
+                    <h5 class='f-sand frame-desc'>TOYOTA AVANZA</h5>
+                    <p class='f-rale frame-class'>MPV</p>
+                </div>
+            </div>
         </div>
     </div>
 </body>

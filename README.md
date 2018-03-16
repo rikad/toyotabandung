@@ -1,2 +1,0 @@
-# toyotabandung
-toyota aja
