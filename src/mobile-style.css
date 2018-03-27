@@ -1,6 +1,6 @@
 @font-face {
-    font-family: tianicon;
-    src: url('assets/tianicon.ttf') format('TrueType');
+    font-family: toyota-font;
+    src: url('assets/toyota-font.ttf') format('TrueType');
 }
 
 html {
@@ -13,7 +13,7 @@ body {
     height : min-content; 
     margin : 0;
     padding : 0;
-    overflow-x: hidden;
+    overflow-x : hidden;    
 }
 
 .f-exo {
@@ -28,19 +28,27 @@ body {
     font-family: Raleway;
 }
 
+.icon {
+    font-family: toyota-font;
+}
+
 .page-container {
-    height: inherit;
+    height: min-content;
     width: 100vw;
     background : white;
+    overflow: hidden;
     z-index: 1;
+    scroll-snap-type: mandatory;
+    scroll-snap-destination: 100% 0%;
+
 }
 
 .headbar {
     position : absolute;
     top : 0;
-    /*height: 100%;*/
+    height: 100%;
     width : 100vw;
-    /*pointer-events: none;*/
+    pointer-events: none;
     z-index : 999;
 }
 
@@ -49,12 +57,14 @@ body {
     align-items: center;
     height: 60px;
     width: 100vw;
-    background : #d9e149;
+    background : #22313F;
 }
 
 .toyota {
     color : white;
     font-size : 50px;
+    line-height: 60px;
+    vertical-align: center;
     margin-left : 25px;
 }
 
@@ -78,20 +88,54 @@ body {
     display : flex;
     justify-content: space-around;
     align-items: center;
-    height : 55px;
+    height : 60px;
     width : 100vw;
     background : white;
     position: sticky;
     top : 0px;
+    pointer-events: auto;
 }
+
+.nav-container a {
+    text-decoration: none;
+}
+
 
 .nav-container span {
-    font-size : 20px;
-    color : #B6BD3B;
+    font-size : 25px;
+    display : flex;
+    flex-direction: column;
+    height: 40px;
+    width : min-content;
+    justify-content: space-between;
+    text-align: center;
+    color : #4B6A88;
+    cursor : pointer;
 }
 
-.icon {
-    font-family: tianicon;
+.nav-container span:after {
+    font-size : 8.5px;
+    letter-spacing: 0.2em;
+}
+
+.i-home:after {
+    font-family: Moon;
+    content : 'Home'
+}
+
+.i-gallery:after {
+    font-family: Moon;
+    content : 'Gallery'
+}
+
+.i-test:after {
+    font-family: Moon;
+    content : 'Brochure'
+}
+
+.i-contact:after {
+    font-family: Moon;
+    content : 'Contact'
 }
 
 .page {
@@ -178,6 +222,11 @@ body {
     color : #6C7A89;
 }
 
+.hot-offer > a {
+    text-decoration: none;
+    color : #6C7A89;
+}
+
 .ho-desc {
     font-size: 13px;
     width: 250px;
@@ -233,6 +282,11 @@ body {
     text-align: center;
 }
 
+.add-contact a {
+    text-decoration: none;
+    color: white;
+}
+
 .add-contact {
     display : flex;
     justify-content: center;
@@ -243,6 +297,7 @@ body {
     border-radius: 25px;
     border : solid white 2px;
     text-align: center;
+    color: white;
 }
 
 .phone-num {
@@ -302,6 +357,10 @@ body {
     background-size : 200px auto;
 }
 
+.product > * {
+    pointer-events: none;
+}
+
 .prize {
     grid-area: p;
     background : #ffcb40;
@@ -350,41 +409,170 @@ body {
     background-image : url("assets/img/product-avanza-300.jpg");
 }
 
-.nav-left {
-    height: 100%; 
-    width: 0; 
-    position: fixed; 
-    z-index: 1000; 
-    top: 0;
-    left: 0;
-    background-color: #fff; 
-    overflow-x: hidden; 
-    padding-top: 60px; 
-    transition: 0.5s;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.nav-left a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-    margin-top: 6px;
+.product-popup {
+    position : absolute;
+    top : 60px;
+    width: 100vw;
+    height : calc(100vh - 60px);
+    background : white;
+    overflow: auto;
+    z-index : 999;
+    display : flex;
+    justify-content: center;
+    display : none;
 }
 
-.nav-left a:hover, .nav-left .active {
-    background-color: #F3F3F3;
-    color: #d9e149;
+.popup-container {
+    width: 100%;
+    height : min-content;
 }
 
-.nav-left .icon {
-    font-size: 1.5em;
-    margin-right: 0.5em;
-    vertical-align: middle;
+.return-nav {
+    width: 100%;
+    position: sticky;
+    top : 0;
+    height : 40px;
+    background : #00EEEE;
 }
 
-.nav-left .closebtn, .description-push .closebtn {
+.popup-image-container {
+    height : 325px;
+    width : 100%;
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-image {
+    width : 80%;
+    height : 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size : 100% auto;
+}
+
+.car-name {
+    width: 80%;
+    height : min-content;
+    margin-top : 20px;
+    font-size : 1.2em;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.car-rating {
+    width: 80%;
+    height : 25px;
+    margin-top : 10px;
+    display : flex;
+}
+
+.star-rating {
+    width: 45%;
+    height : 100%;
+    font-size : 25px;
+    color : #6C7A89;
+}
+
+.total-review {
+    font-family: quicksand;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size : 0.8em;
+    line-height: 25px;
+    padding-left : 10px;
+    border-left : solid 1px #6C7A89;
+}
+
+.popup-car-article {
+    height : min-content;
+    width : 100%;
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items: center;
+}
+
+.car-article {
+    width: 80%;
+    text-overflow: wrap;
+    text-align: justify;
+    font-size : 0.75em;
+    line-height : 1.5em;
+    color : black;
+}
+
+.popup-car-feature {
+    height : min-content;
+    width : 100%;
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom : 20px;
+}
+
+
+.car-feature {
+    width: 80%;
+    height : min-content;
+    display : flex;
+    flex-direction: column;
+    padding-top : 15px;
+}
+
+.feature-detail {
+    width: 100%;
+    height : min-content;
+    display : grid;
+    grid-template-columns: 60px 1fr;
+    grid-template-rows:  15px 20px;
+    grid-template-areas :   'i  t'
+                            'i  d';
+}
+
+.i-fdetail {
+    font-family: toyota-font;
+    grid-area: i;
+    font-size : 38px;
+}
+
+.t-fdetail {
+    grid-area: t;
+    font-size : 12px;
+    font-weight: 800;
+}
+
+.d-fdetail {
+    grid-area: d;
+    font-size : 12px;
+    padding-top : 2.5px;
+    align-self: flex-end;
+}
+
+.popup-price-credit {
+    height : min-content;
+    width : 100%;
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items: center;
+}
+
+.price-detail {
+    width: 80%;
+    height : min-content;
+    display : flex;
+    flex-direction: column;
+    padding-top : 15px;
+    font-weight: 600;
+    font-size : 1.5em;
+    border-top : solid 1px #6C7A89;
+
+}
+
+.closebtn {
     position: absolute;
     top: 0;
     right: 25px;
@@ -393,40 +581,63 @@ body {
     color: #818181;
 }
 
-.description-push {
-    height: 100%;
-    width: 0; 
-    position: fixed; 
-    z-index: 1000; 
-    top: 2vh;
-    left: 5vw;
-    background-color: #fff; 
-    overflow-x: hidden; 
-    padding-top: 60px; 
-    transition: 0.5s;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.description-push .description-push-product {
-    margin: auto;
-    width: 85vw;
-    height: min-content;
-    margin-bottom : 15px;
-    text-align: center;
-}
-
-.description-push a {
+.closebtn a{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
-.description-push .description-push-contact {
-    display : flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
-    border-radius: 25px;
+.product-popup h4 {
     text-align: center;
-    background-color: #2CB742;
+}
+.product-popup table {
+    width: 80%;
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto;
 }
 
+.angsuran table td {
+    border: 1px solid black;
+}
+
+.spesifications {
+    text-align: center;
+    margin: auto;    
+}
+
+.spesifications span {
+    margin: 5px;
+}
+
+.spesifications span.active {
+    border-bottom: 2px solid DodgerBlue;
+}
+
+.spesifications table {
+    margin-top: 1em;
+    border-bottom: 1px solid DodgerBlue;
+}
+
+.spesifications th, .angsuran th {
+    border-bottom: 1px solid DodgerBlue;
+    background-color: DodgerBlue;
+    color: white;
+    padding: 2px;
+}
+.spesifications td {
+    border-bottom: 1px solid DodgerBlue;
+}
+
+
+@keyframes simple {
+    0%   {
+        font-size: 1em;
+        
+    }
+    50%  {
+        font-size: 2em;
+    }
+    100% {
+        font-size: 1em;
+    }
+}
