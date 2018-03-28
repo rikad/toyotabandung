@@ -11,7 +11,12 @@ function spesifications(e) {
     _('.spesifications span.active').classList.remove('active');
     e.target.classList.add('active');
 
+    priceDetail(e.target.car,e.target.id);
     spesificationsTable(e.target.car,e.target.id);
+}
+
+function priceDetail(car,id) {
+    _('.product-popup .price-detail').innerHTML = data[car].spesifications[id][1]; //harga
 }
 
 function spesificationsTable(car,id) {
@@ -162,6 +167,7 @@ function productDetail(e) {
     _('.product-popup .spesifications .menu').innerHTML = ''; //clear
     _('.product-popup .spesifications .menu').appendChild(div);
     spesificationsTable(e.target.id,0); //show default table of spesifications
+    priceDetail(e.target.id,0); //show default price of spesifications
 
     _('.product-popup').style.display = "flex"
     _('body').style.overflow = "hidden"
@@ -171,7 +177,6 @@ function productDetail(e) {
     _('.product-popup .car-article').innerHTML = data[e.target.id].desc;
     _('.product-popup .engine').innerHTML = data[e.target.id].engine;
     _('.product-popup .dimension').innerHTML = data[e.target.id].dimension;
-    _('.product-popup .price-detail').innerHTML = data[e.target.id].price;
     _('.product-popup .angsuran-table').innerHTML = tableAngsuran;
     _('.product-popup .popup-image').classList.remove(_('.product-popup .popup-image').classList[1])
     _('.product-popup .popup-image').classList.add(e.target.id+'-frame')
