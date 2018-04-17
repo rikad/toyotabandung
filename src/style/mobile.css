@@ -1,0 +1,825 @@
+/* Header ------------------------------------------------- */
+
+    header > img {
+        display : none;
+    }
+
+    .header__nav {
+        position : fixed;
+        bottom : 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        width: 100vw;
+        height: 55px;
+        box-shadow: 0px 0px 2px #E0E0E0;
+        background : white;
+        z-index: 999;
+    }
+
+    .header__nav > span {
+        cursor : pointer;
+        position: relative;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 25vw;
+        height: 100%;
+        line-height: 25px;
+        font-size: 0.75em;
+    }
+
+    .header__nav > span:after {
+        position: absolute;
+        top : 8px;
+        left : 0;
+        font-family: toyota-font;
+        font-size : 2em;
+        display: block;
+        height: min-content;
+        width: 100%;
+        color : #34515E;
+    }
+
+    .header__nav > span:nth-child(1):after { content : 'B'; }
+    .header__nav > span:nth-child(2):after { content : 'I'; }
+    .header__nav > span:nth-child(3):after { content : 'C'; }
+    .header__nav > span:nth-child(4):after { 
+        content : 'W';
+        animation: shakeContact 2000ms linear 400ms infinite;
+        transform-origin: center center;
+    }
+
+    @keyframes shakeContact {
+        0%      { transform : scale(1) rotate(0deg);}
+        84%     { transform : scale(1) rotate(0deg);}
+        85%     { transform : scale(1) rotate(-30deg);}
+        90%     { transform : scale(1.2) rotate(30deg);}
+        95%     { transform : scale(1.2) rotate(-30deg);}
+        100%    { transform : scale(1) rotate(0deg); }
+    }
+
+    .greetings-chat {
+        position: fixed;
+        bottom : 60px;
+        right : 10px;
+        height : 60px;
+        border-radius : 5px;
+        width : 260px;
+        background : #1E90FF;
+        z-index: 999;
+        display : flex;
+        align-items: center;
+        animation: chatFadein 6000ms ease;
+    }
+
+    @keyframes chatFadein {
+        from    { opacity: 0; }
+        50%     { opacity: 0; transform: translateX(20vw) }
+        55%     { opacity: 1; transform: translateX( 0 )  }
+        to      { opacity: 1; }
+    }
+
+    .greetings-chat:after {
+        content: '';
+        position: absolute;
+        bottom : -9px;
+        right : 28px;
+        display : block;
+        width : 0px;
+        height : 0px;
+        border-top: solid 10px #1E90FF;
+        border-right: solid 10px transparent;
+        border-left: solid 10px transparent;
+    }
+
+    .greetings-chat > img {
+        width: 36px;
+        height : 36px;
+        border-radius: 18px;
+        margin-left : 10px;
+    }
+
+    .chat-text {
+        position: relative;
+        font-weight: 400;
+        color : white;
+        margin-left : 1em;
+        font-size : 0.75em;
+        top : 6px;
+    }
+
+    .chat-text:before {
+        content: 'Andrian';
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        position: absolute;
+        top : -1.2em;
+        color : #C9F227;
+    }
+
+    .chat-close {
+        position : absolute;
+        width : 20px;
+        height : 20px;
+        text-align: center;
+        top : 2px;
+        right : 0;
+        color : white;
+        font-size : 11px;
+    }
+
+/* Header ------------------------------------------------- */
+
+/* Home --------------------------------------------------- */
+
+    .home {
+        display : flex;
+        flex-direction: column;
+        width: 100vw;
+        height: min-content;
+        align-items: center;
+    }
+
+    .home__carousel {
+        width: 100vw;
+        height : 70vh;
+        overflow: hidden;
+    }
+
+    .carousel__container {
+        width: min-content;
+        height : 100%;
+        display: flex;
+    }
+
+    .carousel__transition--on {
+        transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .carousel__container > div {
+        width: 100vw;
+        height : 70vh;
+        background-size: 100% auto;
+    }
+
+    .carousel__container > div:nth-child(1) { background : url('../img/carousel/mobile/carousel-00.jpg') no-repeat center center; }
+    .carousel__container > div:nth-child(2) { background : url('../img/carousel/mobile/carousel-01.jpg') no-repeat center center; }
+    .carousel__container > div:nth-child(3) { background : url('../img/carousel/mobile/carousel-02.jpg') no-repeat center center; }
+    .carousel__container > div:nth-child(4) { background : url('../img/carousel/mobile/carousel-03.jpg') no-repeat center center; }
+
+    .home__model {
+        position: relative;
+        margin-top : 5vh;
+        width: 75vw;
+        height: min-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Exo;
+        letter-spacing: 1px;
+    }
+
+    .home__model > span {
+        display: block;
+        width: 75vw;
+        font-family: Exo;
+        font-weight: min-content;
+        font-size : 1.5em;
+        text-align: center;
+        color : #34515E;
+        margin-bottom : 40px;
+    }
+
+    .model__dropdown {
+        font-size : 0.8em;
+        margin-top : 40px;
+        width: min-content;
+        height : min-content;
+        z-index: 99;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: visible;
+    }
+
+    .dropdown-list {
+        position: absolute;
+        top : 155px;
+        width: 208px;
+        height: min-content;
+        flex-direction: column;
+        background : white;
+        align-items: center;
+    }
+
+    .model__vehicle {
+        margin-top : 2em;
+        height: min-content;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y : visible;
+    }
+
+    .vehicle__card {
+        width: 100%;
+        height : 425px;
+        margin-bottom : 1em;
+    }
+
+    .model__vdetail{
+        position: fixed;
+        top : 0;
+        width: 100vw;
+        height : 100vh;
+        background : white;
+        z-index: 999;
+        will-change: transform;
+    }
+
+    .model__vdetail > div {
+        width: 100vw;
+        height : 100vh;
+        overflow-y : auto;
+    }
+
+    .model__vdetail > div > div {
+        position: relative;
+        width: 100vw;
+        height : min-content;
+        display : flex;
+        flex-direction: column;
+        padding-bottom : 10vh;
+    }
+
+    .vdetail__back{
+        position: absolute;
+        right : 10px;
+        width : min-content;
+        height : 40px;
+        line-height: 40px;
+        font-size : 1.5em;
+        color : grey;
+        cursor : pointer;
+    }
+
+    .vdetail__car {
+        height : min-content;
+        width: 100vw;
+        display : flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .car__name {
+        width: 80vw;
+        height : 40px;
+        background : white;
+        margin-top : 2.4em;
+        color : white;
+        background : #22313F;
+        font-family: Exo;
+        font-size : 1.2em;
+        line-height: 40px;
+        text-indent: 10px;
+    }
+
+    .car__image {
+        width: 80vw;
+        height : 225px;
+        background : white;
+        margin-top : 1em;
+        background : url('../img/car/yaris/yaris-320.jpg') no-repeat center center;
+        background-size : 100% auto;
+    }
+
+    .car__color {
+        position : relative;
+        width: 80vw;
+        height : 40px;
+        margin-top : 1em;
+        display: flex;
+        padding-top : 30px;
+    }
+
+    .car__color:before {
+        content : 'Available Color';
+        position: absolute;
+        top : 0;
+        font-weight : bold;
+        text-indent: 5px;
+    }
+
+    .car__color > span {
+        width: 30px;
+        height : 30px;
+        background : orange;
+        border-radius : 15px;
+        margin-right : 6px;
+        box-shadow: 0 0 3px #708090;
+    }
+
+    .vdetail__price {
+        height : min-content;
+        width: 100vw;
+        display : flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Table Price */
+
+    tr, td, th, thead, tbody {
+        margin : 0;
+        padding : 0;
+    }
+
+    .price__table {
+        margin-top : 1em;
+        height : min-content;
+        width : 80vw;
+        font-size : 0.7em;
+        vertical-align: middle;
+        text-align: left;
+        text-indent: 5px;
+        border-collapse: collapse;
+        font-family: roboto;
+    }
+
+    .price__table:after {
+        display: block;
+        content : '* harga dapat berubah sewaktu - waktu';
+        margin-top : 5px;
+        width: 100%;
+        color : #E76E3C;
+    }
+
+    .price__table > thead {
+        background : #22313F;
+        width: 80vw;
+        height: min-content;
+        display: block;
+        color : white;
+        font-family: Exo;
+    }
+
+    .price__table > tbody {
+        display: block;
+        width: 100%;
+        max-height: 165px;
+        overflow-y: auto;
+        margin-top : 1em;
+    }
+
+    .price__table > tbody > tr:nth-child(even) {
+        background : #e0e0e0;
+    }
+
+    .price__table tr {
+        height : 30px;
+    }
+
+    .price__table tr td {
+        padding: none;
+    }
+
+    th.col__type {
+        width: calc(80vw * .6);
+    }
+
+    td.col__type {
+        width: calc(80vw * .6);
+    }
+
+
+    .price__spec {
+        margin-top : 2em;
+        height : min-content;
+        width : 80vw;
+        background : white;
+    }
+
+    .price__spec span {
+        display: block;
+        margin-bottom : 1em;
+        font-weight: bold;
+    }
+
+    .price__spec table {
+        font-size : 0.8em;
+        border-collapse: collapse;
+        text-indent : 5px;
+        font-family: Roboto;
+    }
+
+    .price__spec table tr {
+        height : 25px;
+    }
+
+    .price__contact {
+        margin-top : 2em;
+        height : 150px;
+        width : 80vw;
+        background : white;
+        display : flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .price__contact div {
+        height : min-content;
+        padding : 15px;
+        width: 200px;
+        background : #009FD4;
+        color : white;
+        text-align: center;
+    }
+
+    .price__contact span {
+        font-size : 0.7em;
+        text-align: center;
+        line-height : 1.5em;
+        font-weight: 800;
+    }
+
+/* Home --------------------------------------------------- */
+
+/* Pricelist ---------------------------------------------- */
+    #pricelist {
+        display : none;
+    }
+
+    .page__pricelist, .pricelist {
+        width: 100vw;
+        height : 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: quicksand;
+    }
+
+    .pricelist > img {
+        margin-bottom : 3em;
+    }
+
+/* Pricelist ---------------------------------------------- */
+
+/* Credit ---------------------------------------------- */
+    #credit {
+        display : none;
+    }
+
+    .page__credit, .credit {
+        width: 100vw;
+        height : 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: quicksand;
+    }
+
+    
+    .credit > img {
+        margin-bottom : 3em;
+    }
+
+/* Credit ---------------------------------------------- */
+
+/* Contact-on-nav ----------------------------------------- */
+
+    #contact {
+        position: fixed;
+        height : 100vh;
+        width : 100vw;
+        background : rgba(50,50,50, .95);
+        flex-direction: column;
+        align-items: center;
+        z-index: 999;
+        top : 0;
+    }
+
+    .contact--hidden{
+        display: none;
+        will-change: transform;
+    }
+
+    .contact--showen{
+        display: flex;
+        animation-name: fade-in;
+        animation-duration: 300ms;
+    }
+
+    .contact-close {
+        position: absolute;
+        width: 40px;
+        height : 40px;
+        top : 10px;
+        right : 0;
+        line-height : 40px;
+        font-size : 2em;
+        color : white;
+    }
+
+    #contact img {
+        height: 185px;
+        width: 185px;
+        border-radius : 110px;
+        margin-top : 5vh;
+        border : solid 2px white;
+        padding : 15px;
+    }
+
+    .contact-name {
+        display: flex;
+        flex-direction: column;
+        font-family: Exo;
+        font-size : 0.8rem;
+        margin-top : 1.5em;
+        color : white;
+        text-align: center;
+    }
+
+    .contact-name:after {
+        content: 'Andrian';
+        font-family : Roboto;
+        color : white;
+        font-size : 2rem;
+        margin-top : 0.1em;
+    }
+
+    .contact-wa {
+        position: relative;
+        margin-top : 2em;
+        width : 220px;
+        height : 50px;
+        line-height : 50px;
+        color : white;
+        text-align: center;
+        font-size : 1.2em;
+        border-radius : 25px;
+        text-indent: 30px;
+        border : solid 2px white;
+        font-family: Exo;
+    }
+
+    .contact-wa:before {
+        content : 'W';
+        position: absolute;
+        height : 50px;
+        line-height : 50px;
+        left : -1rem;
+        font-family: toyota-font;
+        font-size : 2em;
+        color : white;
+    }
+
+    .contact-call {
+        margin-top : 1em;
+        width : 220px;
+        height : 50px;
+        line-height : 50px;
+        color : white;
+        text-align: center;
+        font-size : 1.2em;
+        border-radius : 25px;
+        border : solid 2px white;
+        font-family: Exo;
+    }
+
+    .contact-num {
+        margin-top : 2em;
+        text-align : center;
+        color : white;
+        font-size : 0.8em;
+        line-height: 1.5em;
+        letter-spacing: 1px;
+    }
+/* Contact-on-nav ----------------------------------------- */
+
+/* Contact ---------------------------------------------- */
+    .page__contact {
+        margin-top : 2em;
+        width: 100vw;
+        height : min-content;
+        display : flex;
+        justify-content: center;
+    }
+
+    .contact__block {
+        width : 75vw;
+        height : min-content;
+        padding-bottom : 20px;
+        background : #3477DB;
+        display : flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius : 2px;
+    }
+
+    .block__profile {
+        margin-top : 20px;
+        width : 180px;
+        height : 'auto';
+        border: solid 4px white;
+        border-radius : 94px;
+    }
+
+    .block__name {
+        margin-top : 2em;
+        font-size : 0.7em;
+        height : min-content;
+        display : flex;
+        flex-direction: column;
+        color : white;
+    }
+
+    .block__name:after {
+        content : 'Andrian';
+        font-size : 1rem;
+        display : block;
+        width : 100%;
+        text-align: center;
+        margin-top : 0.5em;
+    }
+
+    .block__wa {
+        position: relative;
+        margin-top : 2em;
+        color : white;
+        width: 160px;
+        font-family: Exo;
+        font-size : 0.8em;
+        letter-spacing: 0.1em;
+        height :50px;
+        border : solid 2px white;
+        line-height: 50px;
+        padding-right : 1em;
+        padding-left : 1em;
+        text-align: right;
+    }
+
+    .block__wa:before {
+        position : absolute;
+        content: 'W';
+        left : 20px;
+        font-size : 2.2em;
+        font-family: 'toyota-font';
+    }
+
+    .block__num {
+        margin-top : 4em;
+        text-align: center;
+        color : white;
+        font-size : 0.75em;
+        line-height: 1.5em;
+        letter-spacing: 0.1em;
+    }
+/* Contact ---------------------------------------------- */
+
+/* Promo ------------------------------------------------ */
+    .page__promo {
+        position: relative;
+        margin-top : 4em;
+        width: 100vw;
+        height : min-content;
+        display : flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .page__promo > span {
+        display: block;
+        width: 75vw;
+        font-family: Exo;
+        font-weight: min-content;
+        font-size : 1.5em;
+        text-align: center;
+        color : #34515E;
+    }
+    .button__slideLeft {
+        position: absolute;
+        left : 0;
+        height : 100%;
+        width : 50px;
+        z-index: 998;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button__slideLeft:after {
+        content: '';
+        display: block;
+        width: 26px;
+        height : 26px;
+        border-radius : 4px;
+        background : url('https://png.icons8.com/small/50/000000/back.png') no-repeat white center center;
+        background-size: 60% auto;
+        padding : 0.4em;
+        box-shadow: 0 0 4px #708090;
+        opacity: 0.8;
+    }
+
+    .button__slideRight {
+        position: absolute;
+        right : 0;
+        height : 100%;
+        width : 50px;
+        z-index: 998;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button__slideRight:after {
+        content: '';
+        display: block;
+        width: 26px;
+        height : 26px;
+        border-radius : 4px;
+        background : url('https://png.icons8.com/small/50/000000/forward.png') no-repeat white center center;
+        background-size: 60% auto;
+        padding : 0.4em;
+        box-shadow: 0 0 4px #708090;
+        opacity: 0.8;
+    }
+
+    .to-left {
+        animation: to-left 400ms ease;
+    }
+
+    @keyframes to-left {
+        from { transform : translateX(0vw) }
+        to {  transform : translateX(75vw) }
+    }
+
+    .promo__container {
+        width: 75vw;
+        height :min-content;
+    }
+
+    .container__slide {
+        display: flex;
+        width : min-content;
+        height : 300px;
+        transform : translateX(-75vw);
+    }
+
+    .container__slide > div {
+        height : min-content;
+        width : 75vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top : 2em;
+    }
+
+    .container__slide > div > span {
+        font-family: Quicksand;
+        font-size : 0.9em;
+    }
+
+    .promo-16jt {
+        height: 225px;
+        width: 90%;
+        background : url('../img/promo/promo-16jt.jpg') no-repeat center center;
+        background-size : 100% auto;
+    }
+
+    .promo-20jt {
+        height: 225px;
+        width: 90%;
+        background : url('../img/promo/promo-20jt.jpg') no-repeat center center;
+        background-size : 100% auto;
+    }
+
+    .promo-50jt {
+        height: 225px;
+        width: 90%;
+        background : url('../img/promo/promo-50jt.jpg') no-repeat center center;
+        background-size : 100% auto;
+    }
+
+    .promo-90jt {
+        height: 225px;
+        width: 90%;
+        background : url('../img/promo/promo-90jt.jpg') no-repeat center center;
+        background-size : 100% auto;
+    }
+
+    .promo-table {
+        height: 40px;
+        width: 90%;
+        font-size : 0.8em;
+        text-indent: 5px;
+        font-family: Exo;
+        margin-top : 1em;
+    }
+
+/* Promo ------------------------------------------------ */

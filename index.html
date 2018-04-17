@@ -4,180 +4,227 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='stylesheet' href='src/mobile-style.css'>
-    <title>TOYOTA BANDUNG | DEALER TOYOTA BANDUNG TERBAIK | AVANZA | NEW YARIS | NEW RUSH</title>
+    <link rel="stylesheet" href="src/style/main.min.css">
+    <link rel="stylesheet" media="(max-width: 640px)" href="src/style/mobile.min.css">
+    <link rel="stylesheet" media="(min-width: 640px)" href="src/style/desktop.min.css">
+    <title>Toyota Bandung | New Yaris 2018</title>
 </head>
-<body>
-    <div class='headbar'>
-        <div class='head'>
-            <span class='icon toyota'>T</span>
-            <span class='lets-go-beyond'>
-                <p>LET'S</p>
-                <p>GO</p>
-                <p>BEYOND</p>
-            </span>
+<body class='page'>
+    <div class='page__topbar topbar'>
+        <div class="topbar__menu">
+            <input class='menu__checkbox' type="checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <nav class='nav-container'>
-            <span class='icon i-home' onclick="jumpTo('#p1')">H</span>
-            <a href="http://www.toyota.astra.co.id/uploads/default/files/778c5ab4aaf1420b4d3ca212fe0ebe58.pdf" target="_blank"><span class='icon i-test'>B</span></a>
-            <span class='icon i-gallery' onclick="jumpTo('#p4')">P</span>
-            <span class='icon i-contact' onclick="jumpTo('#p3')">C</span>
+        <div class="topbar__contact"></div>
+    </div>
+    <header class='page__header header'>
+        <img src="src/img/toyota-logo.png" alt="home">
+        <nav class='header__nav'>
+            <a href="#" onclick="navigationPage('promo')">Promo</a>
+            <a href="#" onclick="navigationPage('pricelist')">Pricelist</a>
+            <a href="#" onclick="navigationPage('credit')">Credit</a>
+            <a href="#" onclick="openContact()">Contact</a>
         </nav>
+        <div class='greetings-chat'>
+            <img src="src/img/profile-250px.jpg" alt="">
+            <div class='chat-text'>Selamat Datang, ada yang bisa saya bantu ?</div>
+            <div class='chat-close' onclick="closeChat()">&#10005;</div>
+        </div>
+    </header>
+    <main id='promo' class='page__home home'>
+        <div class='home__carousel'>
+            <div class='carousel__pointer'>
+                <span id='p00' onclick="changeImage(this.id)"></span>
+                <span id='p01' onclick="changeImage(this.id)"></span>
+                <span id='p02' onclick="changeImage(this.id)"></span>
+                <span id='p03' onclick="changeImage(this.id)"></span>
+            </div>
+        </div>
+        <div class='home__model'>
+            <span>VEHICLE MODEL</span>
+            <div class='model__dropdown'>
+                <span class='dropdown-selected' onclick="openDropdown()">SEDAN</span>
+                <div class='dropdown-list list--hidden'>
+                    <span>SEDAN</span>
+                    <span>HATCHBACK</span>
+                    <span>MPV</span>
+                    <span>SUV</span>
+                    <span>COMMERCIAL</span>
+                    <span>SPORT</span>
+                    <span>HYBRID</span>
+                </div>
+            </div>
+            <div class='model__vehicle'></div>
+            <div class='model__vdetail model__vdetail--hidden'>
+                <div>
+                    <div>
+                        <span class='vdetail__back' onclick='closeDetail()'>&#10005;</span>
+                        <div class='vdetail__car'>
+                            <span class='car__name'></span>
+                            <div class='car__image'></div>
+                            <div class='car__color'>
+                            </div>
+                        </div>
+                        <div class='vdetail__price'>
+                            <table class='price__table'>
+                                <thead>
+                                    <tr>
+                                        <th class='col__type'>Type</th><th class='col__price'>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                            <div class='price__spec'>
+                                <span>Specification Highlight</span>
+                                <table>
+                                    <tr>
+                                        <td class='col__type'>Displacement (cc)</td><td class='spec-displacement'></td>
+                                    </tr>
+                                    <tr>
+                                        <td class='col__type'>Torque (kgm/rpm)</td><td class='spec-torque'></td>
+                                    </tr>
+                                    <tr>
+                                        <td class='col__type'>Panjang (mm)</td><td class='spec-panjang'></td>
+                                    </tr>
+                                    <tr>
+                                        <td class='col__type'>Lebar (mm)</td><td class='spec-lebar'></td>
+                                    </tr>
+                                    <tr>
+                                        <td class='col__type'>Tinggi (mm)</td><td class='spec-tinggi'></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class='price__contact'>
+                                <a href="https://api.whatsapp.com/send?phone=6285722206662&text=I'm interested in your car for sale#" target="_blank"><div>Konsultasi Pemesanan</div></a>
+                                <span>Informasi Lanjut Hubungi </br>0822 1696 9521 / 0857 2220 6668</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='page__contact'>
+            <div class='contact__block'>
+                <img class='block__profile' src="src/img/profile-250px.jpg" alt="">
+                <span class='block__name'>EXECUTIVE SALES CONSULTANT</span>
+                <a href="https://api.whatsapp.com/send?phone=6285722206662&text=I'm interested in your car for sale#" class='block__wa' target="_blank">Chat WhatsApp</a>
+                <div class='block__num'>Hotline :</br>0822-1696-9521 / 0857-2220-6662</div>
+            </div>
+        </div>
+        <div class='page__promo'>
+            <span>SPECIAL PROMO</span>
+            <div class='button__slideLeft' onclick="setSlide(+1)"></div>                       
+            <div class='button__slideRight' onclick="setSlide(-1)"></div>                       
+            <div class='promo__container'>
+                <div class='container__slide'>
+                    <div>
+                        <div class='promo-16jt'></div>
+                        <span>DP Ringan 16 jt-an Special Lebaran</span>
+                        <table class='promo-table'>
+                            <tr style='background: #34515E; color : white;'>
+                                <th>MODEL</th>
+                                <th>DP</th>
+                            </tr>
+                            <tr>
+                                <td>NEW AGYA</td>
+                                <td>Rp 16.000.000</td>
+                            </tr>
+                            <tr>
+                                <td>NEW AVANZA</td>
+                                <td>Rp 16.000.000</td>
+                            </tr>
+                            <tr>
+                                <td>NEW CALYA</td>
+                                <td>Rp 16.000.000</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <div class='promo-20jt'></div>
+                        <span>DP Ringan 20 jt-an Special Lebaran</span>
+                        <table class='promo-table'>
+                            <tr style='background: #34515E; color : white;'>
+                                <th>MODEL</th>
+                                <th>DP</th>
+                            </tr>
+                            <tr>
+                                <td>TOYOTA SIENTA</td>
+                                <td>Rp 20.000.000</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <div class='promo-50jt'></div>
+                        <span>DP Ringan 50 jt-an Special Lebaran</span>
+                        <table class='promo-table'>
+                            <tr style='background: #34515E; color : white;'>
+                                <th>MODEL</th>
+                                <th>DP</th>
+                            </tr>
+                            <tr>
+                                <td>NEW YARIS</td>
+                                <td>Rp 50.000.000</td>
+                            </tr>
+                            <tr>
+                                <td>KIJANG INNOVA</td>
+                                <td>Rp 50.000.000</td>
+                            </tr>
+                            <tr>
+                                <td>NEW RUSH</td>
+                                <td>Rp 50.000.000</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <div class='promo-90jt'></div>
+                        <span>DP Ringan 90 jt-an Special Lebaran</span>
+                        <table class='promo-table'>
+                            <tr style='background: #34515E; color : white;'>
+                                <th>MODEL</th>
+                                <th>DP</th>
+                            </tr>
+                            <tr>
+                                <td>TOYOTA FORTUNER </td>
+                                <td>Rp 90.000.000</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <article class='home__article'>
+            <h1></h1>
+            <p></p>
+            <section></section>
+        </article>
+    </main>
+    <div id='pricelist' class='page__pricelist pricelist'>
+        <img src="src/img/under-construction.svg" width='200px' height='auto' alt="">
+        <div class='pricelist__block'>
+                Oops, "Pricelist" is Under Maintenance ..
+        </div>
     </div>
-
-    <div class='page-container'>
-        <div id="p1" class='p1 page'>
-            <div class='home-carousel'>
-                <div class='current-slide c00'></div>
-            </div>
-            <div class='carousel-title'>
-                <h1 class="f-rale" style="display:none">TOYOTA-BANDUNG</h1>
-            </div>
-            <div class='carousel-pointer'>
-                <span class='caro00 current' onclick='imageCarousel("c00")'></span>
-                <span class='caro01' onclick='imageCarousel("c01")'></span>
-                <span class='caro02' onclick='imageCarousel("c02")'></span>
-<!--                 <span class='caro03' onclick='imageCarousel("c03")'></span>
-                <span class='caro04' onclick='imageCarousel("c04")'></span>
- -->            </div>
-        </div>
-        <div id="p2" class='p2 page'>
-            <div class='hot-offer'>
-                <h2 class='f-exo'>MONTHLY HOT OFFER</h2>
-                <p class='f-sand ho-desc'>Dapatkan informasi mengenai penawaran mobil dengan harga terbaik bulan ini</p>
-                <a href="https://api.whatsapp.com/send?phone=6285722206662&text=I%27m%20interested%20in%20your%20car%20for%20sale"><div class='ho-button f-rale'>KNOW MORE</div></a>
-            </div>
-        </div>
-        <div id="p3" class='p3 page'>
-            <div class='card-container'>
-                <p class='f-exo'>LIVE CHAT DENGAN KAMI</p>
-                <div class='andrian-image'></div>
-                <div class='andrian-id'>
-                    <p class='f-exo position'>TOYOTA EXECUTIVE SALES CONSULTANT</p>
-                    <p class='f-rale nama-adrian'>KANG ANDRIAN<br></p>
-                </div>
-                <div class='add-contact'>
-                    <span class='icon whatsapp'>W</span>
-                    <a href="https://api.whatsapp.com/send?phone=6285722206662&text=I%27m%20interested%20in%20your%20car%20for%20sale"> <span class='f-exo phone-num'>Add WhatsApp</span></a>
-                </div>
-
-            </div>
-        </div>
-        <div id="p4" class='p4 page'>
-            <div class='container-p4'>
-                <h2 class='featured-product f-exo'>FEATURED PRODUCT</h2>
-                <div class='product product-yaris' id='yaris'>
-                    <div class='frame yaris-frame'>
-                        <span class='prize'>235 JT</span>
-                        <span class='icon i-frame buy yaris-buy'>l</span>
-                        <span class='icon i-frame wish yaris-wish'>c</span>
-                    </div>
-                    <h5 class='f-sand frame-desc'>NEW YARIS 2018</h5>
-                    <p class='f-rale frame-class'>HATCHBACK</p>
-                </div>
-                <div class='product product-rush' id='rush'>
-                    <div class='frame rush-frame'>
-                        <span class='prize'>240 JT</span>
-                        <span class='icon i-frame buy rush-buy'>l</span>
-                        <span class='icon i-frame wish rush-wish'>c</span>
-                    </div>
-                    <h5 class='f-sand frame-desc'>ALL NEW RUSH</h5>
-                    <p class='f-rale frame-class'>SUV</p>
-                </div>
-                <div class='product product-avanza' id='avanza'>
-                    <div class='frame avanza-frame'>
-                        <span class='prize'>190 JT</span>
-                        <span class='icon i-frame buy avanza-buy'>l</span>
-                        <span class='icon i-frame wish avanza-wish'>c</span>
-                    </div>
-                    <h5 class='f-sand frame-desc'>TOYOTA AVANZA</h5>
-                    <p class='f-rale frame-class'>MPV</p>
-                </div>
-            </div>
+    <div id='credit' class='page__credit credit'>
+        <img src="src/img/under-construction.svg" width='200px  'height='auto' alt="">
+        <div class='credit__block'>
+            Oops, "Credit" is Under Maintenance ..
         </div>
     </div>
-
-    <div id="product-popup" class='product-popup'>
-        <div class='popup-container'>
-            <div class='return-nav'>
-                <div class="closebtn" onclick="closePopup()"><a href="#p4">&times;</a></div>
-            </div>
-            <div class='popup-image-container'>
-                <div class='popup-image yaris-frame'></div>
-                <div class='car-name f-exo'>NEW YARIS 2018</div>
-                <div class='car-rating f-exo'>
-                    <div class='star-rating icon'>sssss</div>
-                    <div class='total-review'>0 Review(s)</div>
-                </div>
-            </div>
-            <div class='popup-car-article'>
-                <div class='car-article f-sand'>
-                    Menggunaan mesin anyar dengan tipe 2NR-FE Dual VVT-i berkapasitas 1496 cc yang dapat
-                    menghasilkan tenaga sebesar 107 ps/6,000 rpm dan torsi 14.3 Kgm / 4,200 rpm. 
-                    Terdapat juga overfender, roof rail, side protection moulting, sticker heyker, side skirt, rear spoiler dan rear bumper.
-                </div>
-            </div>
-            <div class='popup-car-feature' style="display:none">
-                <div class="car-feature">
-                    <div class='feature-detail'>
-                        <span class='i-fdetail'>D</span>
-                        <span class='t-fdetail f-exo'>DIMENSION</span>
-                        <span class='d-fdetail f-sand dimension'>4.1 m x 1.7 m x 1.5 m</span>
-                    </div>
-                </div>
-                <div class="car-feature">
-                    <div class='feature-detail'>
-                        <span class='i-fdetail'>E</span>
-                        <span class='t-fdetail f-exo'>ENGINE</span>
-                        <span class='d-fdetail f-sand engine'> 1496 cc | 4 Cy | 16 Valve | DOHC | Dual VVT-i</span>
-                    </div>
-                </div>
-            </div>
-            <div class='popup-price-credit'>
-                <span class='price-detail f-sand'>Rp 350.000.000</span>
-            </div>
-
-            <hr>
-            <div class="spesifications">
-                <h4>SPESIFICATIONS</h4>
-                <div class="menu">
-                </div>
-                <table class="f-sand">
-                    <thead>
-                        <tr>
-                            <th>Dimension</th>
-                            <th>Chassis</th>
-                            <th>Engine</th>
-                        </tr>
-                    </thead>
-                    <tbody class="spesifications-table">
-                        <tr>
-                            <td>A</td>
-                            <td>A</td>
-                            <td>A</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <hr>
-            <div class="angsuran f-sand">
-                <h4>SIMULASI ANGSURAN</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Angsuran</th>
-                            <th>DP</th>
-                        </tr>
-                    </thead>
-                    <tbody class="angsuran-table">
-                        
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
+    <div id='contact' class='contact--hidden'>
+        <div class='contact-close' onclick="closeContact()">&#10005;</div>
+        <img src="src/img/profile-250px.jpg" alt="">
+        <span class='contact-name'>TOYOTA EXECUTIVE SALES CONSULTANT</span>
+        <a href="https://api.whatsapp.com/send?phone=6285722206662&text=I'm interested in your car for sale#" class='contact-wa' target="_blank">Chat WhatsApp</a>
+        <a href="tel:+6282216969521" class='contact-call'>Phone Call</a>
+        <span class='contact-num'>Atau Hubungi : </br> 0822 1696 9521 / 0857 2220 6662</span>
     </div>
+    <footer class='page__footer'>
+
+    </footer>
 </body>
-<script type='text/javascript' src='src/main.js'></script>
+<script type='text/javascript' src='src/javascript/katalog_mobil.js'></script>
+<script type='text/javascript' src='src/javascript/instanceVehicle.js'></script>
 </html>

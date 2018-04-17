@@ -1,0 +1,284 @@
+@font-face {
+    font-family: toyota-font;
+    src: url('font/toyota-font.ttf') format('TrueType');
+}
+
+@font-face {
+    font-family: Exo;
+    src: 
+        url('font/exo/Exo-Regular.ttf') format('TrueType');
+}
+
+@font-face {
+    font-family: Quicksand;
+    src: url('font/quicksand/Quicksand-Regular.ttf') format('TrueType');
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url('font/raleway/Raleway-Regular.ttf') format('TrueType');
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('font/roboto/Roboto-Regular.ttf') format('TrueType');
+}
+
+html, body {
+    margin : 0;
+    width: 100vw;
+    height: min-content;
+    overflow-x: hidden;
+    font-family: Roboto;
+    overflow-y : auto;
+}
+
+a {
+    text-decoration: none;
+    color : black;
+}
+
+.page {
+    height: min-content;
+    background : #F0F0F0;
+    padding-bottom : 20vh;
+}
+
+
+/* Topbar ------------------------------------------------- */
+            
+    .page__topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100vw;
+        height: 60px;
+        background: #22313F;
+        color : white;
+    }
+
+    .topbar__menu {
+        position: relative;
+        width: 30px;
+        height : 20px;
+        margin-left : 10vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .menu__checkbox {
+        position: absolute;
+        width: 100%;
+        height : 100%;
+        margin : 0;
+        outline: 0;
+        opacity: 0;
+    }
+
+    .menu__checkbox ~ span {
+        height: 2px;
+        width: 100%;
+        background : white  ;
+    }
+
+    
+    .menu__checkbox ~ span:nth-child(2) {
+        width: 100%;
+    }
+
+    .menu__checkbox ~ span:nth-child(3) {
+        width: 60%;
+    }
+
+    .menu__checkbox ~ span:nth-child(4) {
+        width: 80%;
+    }
+
+    .topbar__contact {
+        position: relative;
+        width: max-content;
+        height : min-content;
+        display: flex;
+        flex-direction: column;
+        margin-right : 10vw;
+        letter-spacing: 0.05em;
+    }
+
+    .topbar__contact:before {
+        content : 'Andrian';
+        font-size : 0.8em;
+        text-align: right;
+    }
+
+    .topbar__contact:after {
+        content : '+62 822 1696 9521';
+        text-align: right;
+        font-size : 0.8em;
+        color : #89C4F4;
+        padding-top : 4px;
+    }
+
+/* Topbar ------------------------------------------------- */
+
+/* Header --------------------------------------------------- */
+
+    header {
+        position: relative;
+        display: flex;
+        justify-content: space-between ;
+        align-items: center;
+        width: 100vw;
+        height: min-content;
+    }
+
+
+/* Header --------------------------------------------------- */
+
+/* Home --------------------------------------------------- */
+
+
+    .home__model {
+        position: relative;
+        margin-top : 5vh;
+        width: 75vw;
+        height: min-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Exo;
+        letter-spacing: 1px;
+    }
+
+
+    .dropdown-selected {
+        position: relative;
+        display : block;
+        width: 205px;
+        margin: 0;
+        height : 40px;
+        line-height: 40px;
+        text-indent: 20px;
+        z-index: 1;
+        border : solid 2px #34515E;
+        overflow: visible;
+    }
+
+    .dropdown-selected:after {
+        content : '\25be';
+        position: absolute;
+        right : 5px;
+        font-size : 1.5em;
+        color : #34515E;
+    }
+
+    .dropdown-selected:before {
+        content : 'Pilih Model Kendaraan :';
+        position: absolute;
+        top : -3.5em;
+        left : -15px;
+        font-size : 0.85em;
+        color : #34515E;
+    }
+
+
+    .list--hidden { display : none }
+    .list--showen { display : flex }
+
+    .dropdown-list > span {
+        width: 165px;
+        margin: 0;
+        padding: 10px;
+        height : 25px;
+        line-height: 25px;
+    }
+
+    .dropdown-list > span:not(:last-child) {
+        border-bottom : solid 1px #F2F2F2;
+    }
+
+
+    .card__image {
+        height : 70%;
+        width: 100%;
+    }
+
+    .card__info {
+        height: 30%;
+        width: 100%;
+        background : white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info__name {
+        font-family: Quicksand;
+        font-size: 1em;
+        font-weight: bold;
+        height: 30%;
+        line-height: 35px;
+        text-align: center;
+    }
+
+    .info__price {
+        font-family: Exo;
+        font-size: 0.7em;
+        line-height: 20px;
+        height: min-content;
+        text-align: center;
+        margin-bottom: 1.5em;
+    }
+
+    .info__button {
+        font-family: Raleway;
+        font-size: 0.7em;
+        height: 30px;
+        width: 125px;
+        line-height: 30px;
+        text-align: center;
+        border: solid 2px #708090;
+        border-radius : 15px;
+    }
+
+/* Home --------------------------------------------------- */
+
+
+
+
+
+
+.vehicle__card {
+    opacity: 0;
+
+}
+
+.vehicle__card--animation {
+    animation-name : card-in;
+    animation-duration: 800ms;
+    animation-fill-mode : forwards;
+}
+
+@keyframes card-in {
+    from    { transform : translate3d(0 , 50px, 0 ); opacity: 0; }
+    to      { transform : translate3d(0 , 0,  0); opacity: 1; }
+}
+
+
+
+.model__vdetail--hidden {
+    display: none;
+    will-change: transform;
+}
+
+.model__vdetail--showen {
+    display: flex;
+    animation-name: fade-in;
+    animation-duration: 300ms;
+}
+
+@keyframes fade-in {
+    from    { transform : scale(0.1, 0.1); opacity: 0; }
+    to      { transform : scale(1, 1); opacity: 1; }
+}
+
