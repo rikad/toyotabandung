@@ -22,10 +22,10 @@
     <header class='page__header header'>
         <img src="src/img/toyota-logo.png" alt="home">
         <nav class='header__nav'>
-            <a href="#" onclick="navigationPage('promo')">Promo</a>
-            <a href="#" onclick="navigationPage('pricelist')">Pricelist</a>
-            <a href="#" onclick="navigationPage('credit')">Credit</a>
-            <a href="#" onclick="openContact()">Contact</a>
+            <span onclick="navigationPage('promo')">Promo</span>
+            <span onclick="navigationPage('pricelist')">Gallery</span>
+            <span onclick="navigationPage('credit')">Credit</span>
+            <span onclick="openContact()">Contact</span>
         </nav>
         <div class='greetings-chat'>
             <img src="src/img/profile-250px.jpg" alt="">
@@ -35,15 +35,15 @@
     </header>
     <main id='promo' class='page__home home'>
         <div class='home__carousel'>
-            <div class='carousel__pointer'>
-                <span id='p00' onclick="changeImage(this.id)"></span>
-                <span id='p01' onclick="changeImage(this.id)"></span>
-                <span id='p02' onclick="changeImage(this.id)"></span>
-                <span id='p03' onclick="changeImage(this.id)"></span>
+            <div class='carousel__container'>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </div>
         <div class='home__model'>
-            <span>VEHICLE MODEL</span>
+            <span>PRICE LIST</span>
             <div class='model__dropdown'>
                 <span class='dropdown-selected' onclick="openDropdown()">SEDAN</span>
                 <div class='dropdown-list list--hidden'>
@@ -107,10 +107,12 @@
             </div>
         </div>
         <div class='page__contact'>
+
             <div class='contact__block'>
                 <img class='block__profile' src="src/img/profile-250px.jpg" alt="">
                 <span class='block__name'>EXECUTIVE SALES CONSULTANT</span>
                 <a href="https://api.whatsapp.com/send?phone=6285722206662&text=I'm interested in your car for sale#" class='block__wa' target="_blank">Chat WhatsApp</a>
+
                 <div class='block__num'>Hotline :</br>0822-1696-9521 / 0857-2220-6662</div>
             </div>
         </div>
@@ -204,7 +206,7 @@
     <div id='pricelist' class='page__pricelist pricelist'>
         <img src="src/img/under-construction.svg" width='200px' height='auto' alt="">
         <div class='pricelist__block'>
-                Oops, "Pricelist" is Under Maintenance ..
+                Oops, "Gallery" is Under Maintenance ..
         </div>
     </div>
     <div id='credit' class='page__credit credit'>
@@ -218,6 +220,7 @@
         <img src="src/img/profile-250px.jpg" alt="">
         <span class='contact-name'>TOYOTA EXECUTIVE SALES CONSULTANT</span>
         <a href="https://api.whatsapp.com/send?phone=6285722206662&text=I'm interested in your car for sale#" class='contact-wa' target="_blank">Chat WhatsApp</a>
+
         <a href="tel:+6282216969521" class='contact-call'>Phone Call</a>
         <span class='contact-num'>Atau Hubungi : </br> 0822 1696 9521 / 0857 2220 6662</span>
     </div>
